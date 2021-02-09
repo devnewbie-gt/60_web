@@ -1,0 +1,9 @@
+package com.bc.frontcontroller;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+
+@WebServlet("/controller")
+public class FrontController extends HttpServlet {
+
+}

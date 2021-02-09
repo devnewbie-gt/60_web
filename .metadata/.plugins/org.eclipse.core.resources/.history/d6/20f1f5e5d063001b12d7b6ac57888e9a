@@ -1,0 +1,20 @@
+<%@page import="com.bc.mybatis.GuestBookVO"%>
+<%@page import="java.util.List"%>
+<%@page import="com.bc.mybatis.DBService"%>
+<%@page import="org.apache.ibatis.session.SqlSession"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%
+	SqlSession ss = DBService.getFactory().openSession();
+	List<GuestBookVO> list = ss.selectList("guestbook.all");
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

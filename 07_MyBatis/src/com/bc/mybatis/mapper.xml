@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="member">
+ 	
+ 	<select id="selectAll" resultType="MemberVO">
+ 		select idx, id, pwd, name, age, address, reg
+ 		from member
+ 		order by idx
+ 	</select>
+ 	
+ 	<select id="selectOne" parameterType="java.lang.String" resultType="MemberVO">
+ 		select idx, id, pwd, name, age, address, reg
+ 		from member
+ 		where id = #{id}
+ 	</select>
+ 	
+ 	<insert id="insertMember" parameterType="MemberVO">
+ 		insert into member (idx, id, pwd, name, age, address, reg)
+ 		values(member_seq.nextval, #{id}, #{pwd}, #{name}, #{age}, #{address}, sysdate)
+ 	</insert>
+ 	
+ 	<delete id="deleteMember" parameterType="String">
+ 		delete from member where id = #{id}
+ 	</delete>
+ 	
+</mapper>

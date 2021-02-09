@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="guestbook">
+ 	
+ 	<select id="all" resultType="GuestBookVO">
+ 		select *
+ 		from guestbook
+ 		order by idx
+ 	</select>
+ 	
+ 	<select id="one" resultType="GuestBookVO" parameterType="String">
+ 		select *
+ 		from guestbook
+ 		where idx = #{idx}
+ 	</select> 	
+</mapper>
